@@ -4,3 +4,7 @@ export class Person{
     name: string;
 
 }
+
+export class personUpdatingRequest{
+    name: string
+}
