@@ -15,20 +15,21 @@ export class PeopleService {
     }
     
     findById(id: number) : Person {
-        const foundPerson = this.people.find(function(person){
-            return person.id == id
-        })
-
+        const foundPerson = this.people.find(person => person.id == id)
         return foundPerson;
-
     }
 
     update(id: number, updatingPerson: personUpdatingRequest){
-        this.people.forEach(function(person){
+         this.people.forEach(person =>{
             if(id == person.id){
                 person.name = updatingPerson.name;
             }
         })
+    }
+
+    delete(id: number){        
+        const newList = this.people.filter( person => person.id != id)
+        this.people = newList;
     }
 
 }
